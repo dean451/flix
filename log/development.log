@@ -137,3 +137,13 @@ Migrating to CreateUsers (20170124071758)
             FROM sqlite_temp_master
             WHERE name='index_reviews_on_movie_id' AND type='index'
 [0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "dean451@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "dean451@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dean"], ["email", "dean451@gmail.com"], ["password_digest", "$2a$10$FIfo/BDmGib8ttXMVx308.t3Fu/JfqfPj.BO2lnjWtAykIOSsbfoi"], ["created_at", 2017-01-24 07:29:40 UTC], ["updated_at", 2017-01-24 07:29:40 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
