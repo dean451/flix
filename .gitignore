@@ -1,1 +1,6 @@
-tmp
+*.tmp
+*.log
+*.sqlite3
+.DS_Store
+.AppleDouble
+.LSOverride
