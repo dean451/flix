@@ -10,8 +10,16 @@ class User < ApplicationRecord
                      format: /\A[A-Z0-9]+\z/i,
                      uniqueness: { case_sensitive: false }
 
+
+def self.authenticate(email, password)
+  user = User.find_by(email: email)
+  user && user.authenticate(password)
+end
+
+
+
  def gravatar_id
    Digest::MD5::hexdigest(email.downcase)
  end
- 
+
 end
