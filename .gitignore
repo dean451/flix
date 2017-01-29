@@ -1,7 +1,13 @@
-*.tmp
-*.log
-*.sqlite3
+log/*
+tmp/*
+tmp/**/*
+config/*.yml
+
+# for local development only
+.bundle/*
+.ruby-version
+coverage
+bin/
+.byebugrc
 .DS_Store
-.AppleDouble
-.LSOverride
-tmp
+config.codekit
