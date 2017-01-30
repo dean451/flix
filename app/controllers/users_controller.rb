@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    
+
     @user.destroy
     session[:user_id] = nil
     redirect_to root_url, alert: "Account successfully deleted!"
@@ -50,7 +50,7 @@ private
 
   def require_correct_user
     @user = User.find(params[:id])
-    unless current_user == @user
+    unless current_user?(@user)
       redirect_to root_url
     end
 
