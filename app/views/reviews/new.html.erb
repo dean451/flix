@@ -7,8 +7,8 @@
   <fieldset>
     <ol>
       <li class="required">
-        <%= f.label :name %>         
-        <%= f.text_field :name, size: 40, autofocus: true %>
+
+        
       </li>
       <li class="required stars">
         <%= f.label :stars %>
@@ -16,7 +16,7 @@
           <span class="star">
             <%= f.radio_button :stars, star %> <%= star %>
           </span>
-        <% end %>     
+        <% end %>
       </li>
       <li class="required">
         <%= f.label :comment %>
@@ -24,7 +24,7 @@
       </li>
     </ol>
     <p>
-      <%= f.submit 'Post Review' %> 
+      <%= f.submit 'Post Review' %>
       <%= link_to "Cancel", @movie, class: 'button' %>
     </p>
   </fieldset>
