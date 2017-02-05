@@ -6,7 +6,8 @@
   <% @reviews.each do |review| %>
     <li>
       <span class="review"><%= pluralize(review.stars, 'star') %></span>
-      
+      <span>by <%= link_to(review.user.name, users_path) %></span>
+      <%= profile_image_for(review.user, size: 35) %>
       <span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
       <%= link_to delete_review_image, [@movie, review],
                   id: "#{dom_id(review)}_delete",

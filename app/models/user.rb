@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :registrations, dependent: :destroy
+  has_many :reviews
 
   has_secure_password
 
