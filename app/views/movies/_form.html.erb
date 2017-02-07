@@ -2,6 +2,9 @@
   <%= render "shared/errors", object: @movie %>
   <fieldset>
     <ol>
+      <li>
+        <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) %>
+      </li>
       <li class="required">
         <%= f.label :title %>
         <%= f.text_field :title, autofocus: true %>
