@@ -11,10 +11,11 @@
       <li class="movies">
         <%= link_to 'All Users', users_path, class: 'button' %>
       </li>
-      
+
 
 
       <% end %>
     </ul>
   </nav>
+  <%= content_for(:side) %>
 </aside>

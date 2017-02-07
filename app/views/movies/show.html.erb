@@ -12,6 +12,18 @@
   <p>
     <%= pluralize(@fans.size, 'fan') %>
   </p>
+  <% content_for :side do %>
+  <% if @fans.any? %>
+      <h3>Fans</h3>
+      <ul>
+        <% @fans.each do |user| %>
+          <li>
+            <%= link_to user.name, user %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
 
   <h3 class="no-rule">
     <%= @movie.rating %> &bull; <%= @movie.duration %>
