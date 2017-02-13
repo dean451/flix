@@ -1,5 +1,6 @@
 <article id="movie" class="movie">
   <header>
+    <% content_for(:title, @movie.title) %>
     <%= image_for(@movie) %>
     <h1><%= @movie.title %></h1>
     <h2>Released: <%= @movie.released_on %></h2>
@@ -24,7 +25,7 @@
       </ul>
     <% end %>
   <% end %>
-  
+
   <% content_for :side do %>
     <h3>Genres</h3>
     <ul>
