@@ -17,6 +17,14 @@ class User < ApplicationRecord
                      uniqueness: { case_sensitive: false }
 
 
+
+
+   # User level scopes
+
+   scope :by_name, -> { order(:name) }
+   scope :not_admins, -> { by_name.where(admin: false) }
+
+
 def self.authenticate(email, password)
   user = User.find_by(email: email)
   user && user.authenticate(password)
