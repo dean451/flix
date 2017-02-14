@@ -12,6 +12,14 @@
         <%= link_to 'All Users', users_path, class: 'button' %>
       </li>
 
+      <li class="movies">
+        <%= link_to 'Hits', filtered_movies_path(:hits), class: 'button' %>
+      </li>
+      
+      <li class="movies">
+        <%= link_to 'Flops', filtered_movies_path(:flops), class: 'button' %>
+      </li>
+
 
 
       <% end %>
