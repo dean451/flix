@@ -27,12 +27,14 @@
   <% end %>
 
   <% content_for :side do %>
-    <h3>Genres</h3>
-    <ul>
-      <% @genres.each do |genre| %>
-        <li><%= genre.name %></li>
-      <% end %>
-    </ul>
+    <nav>
+      <h3>Genres</h3>
+        <ul>
+          <% @genres.each do |genre| %>
+            <li><%= genre.name %></li>
+          <% end %>
+        </ul>
+    </nav>
   <% end %>
 
   <h3 class="no-rule">
