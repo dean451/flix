@@ -34,17 +34,6 @@
 <% end %>
 
   <footer>
-    <nav>
-      <% if current_user?(@user) || current_user_admin? %>
-        <%= link_to "Edit Account", edit_user_path(@user), class: 'button' %>
-      <% end %>
-      <% if current_user_admin? %>
-        <%= link_to 'Delete Account', @user,
-                   method: :delete,
-                   data: { confirm: 'Are you sure?' },
-                   class: 'button' %>
-      <% end %>
-    </nav>
 
 
     <h3>Username</h3>
@@ -56,5 +45,17 @@
       <%= @user.created_at.strftime("%B %Y") %>
     </p>
   </footer>
+  <nav>
+    <% if current_user?(@user) || current_user_admin? %>
+      <%= link_to "Edit Account", edit_user_path(@user), class: 'button' %>
+    <% end %>
+    <% if current_user_admin? %>
+      <%= link_to 'Delete Account', @user,
+                 method: :delete,
+                 data: { confirm: 'Are you sure?' },
+                 class: 'button' %>
+    <% end %>
+  </nav>
+
 
 </article>
